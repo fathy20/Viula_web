@@ -1,0 +1,3 @@
+http://127.0.0.1:5000/#catalogs
+python app.py
+D:\REDSEA\SYS_1\system\env_sys\Scripts\activate.bat
