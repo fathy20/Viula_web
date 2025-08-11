@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+:root{
+  /* ألوان البراند + التدرّج البنفسجي */
+  --vio-1:#7a3eff;
+  --vio-2:#e14cff;
+  --primary-color:var(--vio-1);
+  --secondary-color:#DA70D6;
+
+  --gradient-1:linear-gradient(90deg,var(--vio-1),var(--vio-2));
+  --gradient-2:linear-gradient(135deg,#9932CC,#FF69B4);
+
+  --dark-color:#3a3a3a;
+  --text-color:#555;
+  --light-gray-bg:#f9f9f9;
+  --white-color:#fff;
+  --font-family:'Tajawal',sans-serif;
+  --header-height:80px;
+}
+
+/* Reset/Globals */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-family);
+  color:var(--text-color);
+  line-height:1.9;
+  font-size:16px;
+  /* NEW: علشان الهيدر الثابت ما يغطيش أول سكشن */
+  padding-top:var(--header-height);
+}
+.container{max-width:1140px;margin:0 auto;padding:0 20px}
+.text-center{text-align:center}
+
+/* Header */
+.main-header{
+  position:fixed;top:0;left:0;width:100%;height:var(--header-height);
+  background:rgba(255,255,255,.95);border-bottom:1px solid #eee;
+  box-shadow:0 4px 30px rgba(138,43,226,.1);
+  display:flex;align-items:center;z-index:1000;transition:all .5s ease;
+}
+.main-header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.main-header .container{display:flex;justify-content:space-between;align-items:center}
+/* NEW: خليه مناسب لارتفاع الهيدر */
+.logo{height:56px;width:auto}
+nav a{
+  text-decoration:none;color:var(--dark-color);margin:0 18px;font-weight:500;position:relative;transition:all .4s ease
+}
+nav a::after{
+  content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--gradient-1);transition:all .4s ease
+}
+nav a:hover,nav a.active{color:var(--dark-color)}
+nav a:hover::after,nav a.active::after{width:100%}
+
+/* Hero */
+.hero{
+  position:relative;height:100vh;display:flex;justify-content:center;align-items:center;
+  text-align:center;color:#fff;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3;z-index:1;
+}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.hero-logo{max-width:250px;height:auto;margin-bottom:20px;will-change:transform}
+.hero-slogan{max-width:300px;height:auto;margin-bottom:36px}
+.scroll-down{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  color:#fff;font-size:2rem;z-index:3;animation:bounce 2s infinite
+}
+@keyframes bounce{
+  0%,20%,50%,80%,100%{transform:translate(-50%,0)}
+  40%{transform:translate(-50%,-20px)}
+  60%{transform:translate(-50%,-10px)}
+}
+
+/* Sections */
+.section{padding:120px 0;opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.4,0,.2,1)}
+.section.visible{opacity:1;transform:translateY(0)}
+.bg-light{background-color:var(--light-gray-bg)}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{
+  font-size:2.8rem;font-weight:700;position:relative;display:inline-block;padding-bottom:20px;color:var(--dark-color)
+}
+.section-title h2::after{
+  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:90px;height:6px;background:var(--gradient-1);border-radius:4px;
+  box-shadow:0 6px 18px rgba(122,62,255,.35);
+}
+.section-content p{max-width:800px;margin:0 auto;font-size:1.2rem}
+.two-column{display:flex;align-items:center;gap:60px;flex-wrap:wrap}
+.two-column .text-content{flex:1;text-align:right;min-width:300px}
+.two-column .image-content{flex:1;min-width:300px}
+.two-column .image-content img{width:100%;border-radius:12px;box-shadow:0 15px 45px rgba(0,0,0,.1);transition:transform .5s ease}
+.two-column .image-content img:hover{transform:translateY(-10px)}
+
+/* Values */
+.values-section{background:var(--gradient-2);color:#fff}
+.values-section h2{color:#fff}
+
+/* Catalogs grid */
+.catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.catalog-card{
+  display:block;position:relative;border-radius:12px;overflow:hidden;background:#fff;
+  box-shadow:0 10px 26px rgba(0,0,0,.08);transform:translateY(0);
+  transition:transform .3s ease,box-shadow .3s ease;text-decoration:none
+}
+.catalog-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
+.catalog-card img{width:100%;height:360px;object-fit:cover;display:block}
+.catalog-meta{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 90%);color:#fff;
+  padding:14px 16px;display:flex;justify-content:flex-start;align-items:center
+}
+.catalog-meta span{font-weight:700;letter-spacing:.5px}
+
+/* Footer */
+.main-footer{background:#2b2b2b;color:#ccc;padding:50px 0;text-align:center;font-size:.9rem}
+
+/* ===== Social Sidebar (التدرّج البنفسجي) ===== */
+.social-bar{
+  position:fixed; inset-inline-start:12px; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; gap:10px; z-index:9999;
+}
+.social-bar--right{ inset-inline-start:auto; inset-inline-end:12px } /* NEW: لو عايزها يمين */
+.social-bar a,.social-bar .lang{
+  inline-size:42px; block-size:42px; display:grid; place-items:center;
+  border-radius:12px; background:var(--gradient-1); color:#fff; text-decoration:none; font-weight:700;
+  box-shadow:0 8px 18px rgba(122,62,255,.35);
+  transition:transform .15s ease, filter .2s ease;
+}
+.social-bar a:hover,.social-bar .lang:hover{ filter:brightness(1.15); transform:translateY(-2px) scale(1.04) }
+.social-bar i{ font-size:18px }
+.social-bar .divider{ inline-size:2px; block-size:40px; background:#ffffff33; margin:4px auto }
+
+/* ===== زرار عام بنفس التدرّج (استخدمه لأي CTA) ===== */
+.btn-gradient{
+  background:var(--gradient-1); color:#fff; border:none; padding:12px 22px; border-radius:12px;
+  font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  box-shadow:0 10px 24px rgba(122,62,255,.35); transition:transform .15s ease, filter .2s ease;
+}
+.btn-gradient:hover{ filter:brightness(1.12); transform:translateY(-2px) }
+
+/* Responsive */
+@media (max-width:1100px){.catalog-grid{grid-template-columns:repeat(3,1fr)}.catalog-card img{height:320px}}
+@media (max-width:820px){.catalog-grid{grid-template-columns:repeat(2,1fr)}.catalog-card img{height:300px}}
+@media (max-width:520px){.catalog-grid{grid-template-columns:1fr}.catalog-card img{height:280px}}
+@media (max-width:768px){.hero-logo{max-width:160px}.hero-slogan{max-width:200px}}
+
+/* احترام إعداد “تقليل الحركة” */
+@media (prefers-reduced-motion: reduce){
+  .scroll-down{animation:none}
+  .two-column .image-content img{transition:none}
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ڤيولا - أَصْلُ الجَمالِ العَرَبِيّ</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css?v=5"/>
+
+  <style>
+    .social-bar{position:fixed;right:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:99999}
+    .social-bar a{width:46px;height:46px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(90deg,#7a3eff,#e14cff);color:#fff;font-size:20px;text-decoration:none;box-shadow:0 6px 18px rgba(122,62,255,.35);transition:transform .15s ease,filter .2s ease}
+    .social-bar a:hover{filter:brightness(1.15);transform:translateY(-2px) scale(1.05)}
+    @media (max-width:768px){.social-bar{right:8px;gap:8px}.social-bar a{width:40px;height:40px;font-size:18px}}
+  </style>
+</head>
+<body>
+
+<!-- شريط أيقونات السوشيال -->
+<div class="social-bar" aria-label="روابط التواصل">
+  <a href="https://facebook.com/YourPage" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com/YourUser" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://wa.me/201234567890" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+201234567890" title="اتصل بنا" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
+</div>
+
+<!-- الهيدر -->
+<header class="main-header">
+  <div class="container">
+    <img src="assets/images/logo-final-.png" alt="Viola" class="logo">
+    <nav>
+      <a href="#about">عن ڤيولا</a>
+      <a href="#vision">رؤيتنا</a>
+      <a href="#mission">رسالتنا</a>
+      <a href="#values">قيمتنا</a>
+      <a href="#catalogs">الكتالوجات</a>
+    </nav>
+  </div>
+</header>
+
+<!-- البطل -->
+<section class="hero">
+  <img src="assets/videos/logo-bg.gif" alt="Logo Background" class="hero-bg" loading="lazy">
+  <div class="hero-content">
+    <img src="assets/images/logo-final-.png" alt="Viola Logo" class="hero-logo" loading="lazy">
+    <img src="assets/images/Slogan.png" alt="Viola Slogan" class="hero-slogan" loading="lazy">
+    <a href="#about" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<main>
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-title"><h2>براند سعودي بكل فخر</h2></div>
+      <div class="section-content text-center">
+        <p>نحن براند سعودي متخصص في أدوات العناية الشخصية، صُمم ليجسد النعومة، الأناقة، والجودة. نقدم لكِ منتجات مبتكرة مستوحاة من ذوق المرأة العربية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- رؤيتنا -->
+  <section id="vision" class="section vision-section">
+    <video class="vision-bg" autoplay muted loop playsinline>
+      <source src="assets/videos/vision-bg.mp4" type="video/mp4">
+      <img src="assets/videos/vision-bg.gif" alt="Vision Background">
+    </video>
+
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+      <div class="section-title"><h2>رؤيتنا</h2></div>
+      <div class="section-content text-center">
+        <p>ان نكون العلامة السعودية الرائدة في أدوات التجميل النسائية التي تعبّر عن ذوق المرأة العربية وتمنحها لمسة من الجمال الأصيل والعناية المثالية في كل يوم.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission" class="section">
+    <div class="container">
+      <div class="section-title"><h2>رسالتنا</h2></div>
+      <div class="section-content text-center">
+        <p>ان نمنح كل امرأة تجربة مختلفة تبدأ من تفاصيل صغيرة وتنتهي بشعورٍ بالثقة والرضا…</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="values" class="section values-section">
+    <div class="container">
+      <div class="section-title"><h2>قيمتنا</h2></div>
+      <div class="section-content text-center">
+        <p>نؤمن أن الجمال ليس مجرد مظهر بل هو تجربة متكاملة من الإحساس والذوق والاعتزاز بالهوية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الكتالوجات -->
+  <section id="catalogs" class="section bg-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>الكتالوجات</h2>
+        <p class="text-center" style="margin-top:10px;color:#6b7b93">
+          يمكنكم الاطلاع على منتجاتنا حسب كل براند عن طريق تصفح الكتالوجات التفاعلية.
+        </p>
+      </div>
+
+      <div class="catalog-grid">
+        <!-- كل كارت يفتح نفس PDF كمثال -->
+        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+          <img src="assets/images/Viula%20White%202-1.png" alt="Viula White 2-1" loading="lazy">
+          <div class="catalog-meta"><span>Viula White</span></div>
+        </a>
+
+        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+          <img src="assets/images/Viula%20White%203-1.png" alt="Viula White 3-1" loading="lazy">
+          <div class="catalog-meta"><span>Viula White</span></div>
+        </a>
+
+        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+          <img src="assets/images/Viula%20White%204-1.png" alt="Viula White 4-1" loading="lazy">
+          <div class="catalog-meta"><span>Viula White</span></div>
+        </a>
+
+        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+          <img src="assets/images/Viula%20White%2033-1.png" alt="Viula White 33-1" loading="lazy">
+          <div class="catalog-meta"><span>Viula White</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="main-footer">
+  <div class="container">
+    <p>&copy; 2025 ڤيولا. كل الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<!-- JS -->
+<script src="assets/js/script.js?v=4"></script>
+</body>
+</html>
