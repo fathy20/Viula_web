@@ -31,6 +31,7 @@
 
   <script>
     (function () {
+      // مثال: catalog.html?file=Viula%20White.pdf&title=Viula%20White
       const params = new URLSearchParams(location.search);
       const rawFile  = params.get('file');
       const rawTitle = params.get('title') || 'الكتالوج';
@@ -40,8 +41,9 @@
         return;
       }
 
-      const fileNameDecoded = decodeURIComponent(rawFile);
-      const fileUrl = 'assets/pdfs/' + encodeURIComponent(fileNameDecoded).replace(/%2F/g, '/');
+      // نبني المسار داخل assets/pdfs/
+      const decoded = decodeURIComponent(rawFile); // "Viula White.pdf"
+      const fileUrl = 'assets/pdfs/' + encodeURIComponent(decoded).replace(/%2F/g, '/');
 
       const titleText = decodeURIComponent(rawTitle);
       document.getElementById('title').textContent = titleText;
@@ -50,7 +52,7 @@
       const viewerUrl = fileUrl + '#page=1&zoom=page-width';
       document.getElementById('pdf-frame').src = viewerUrl;
       document.getElementById('download-link').href = fileUrl;
-      document.getElementById('open-link').href = fileUrl;
+      document.getElementById('open-link').href  = fileUrl;
     })();
   </script>
 </body>
