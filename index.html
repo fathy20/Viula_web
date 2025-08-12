@@ -7,14 +7,33 @@
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=5"/>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="assets/css/style.css?v=6"/>
 
   <style>
-    .social-bar{position:fixed;right:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:99999}
-    .social-bar a{width:46px;height:46px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(90deg,#7a3eff,#e14cff);color:#fff;font-size:20px;text-decoration:none;box-shadow:0 6px 18px rgba(122,62,255,.35);transition:transform .15s ease,filter .2s ease}
-    .social-bar a:hover{filter:brightness(1.15);transform:translateY(-2px) scale(1.05)}
-    @media (max-width:768px){.social-bar{right:8px;gap:8px}.social-bar a{width:40px;height:40px;font-size:18px}}
+    /* شوية تنسيقات سريعة للـ social bar + بطاقات السلايدر */
+    .social-bar{
+      position:fixed; right:12px; top:50%; transform:translateY(-50%);
+      display:flex; flex-direction:column; gap:10px; z-index:99999;
+    }
+    .social-bar a{
+      width:46px; height:46px; display:grid; place-items:center;
+      border-radius:12px; background:linear-gradient(90deg,#7a3eff,#e14cff);
+      color:#fff; font-size:20px; text-decoration:none;
+      box-shadow:0 6px 18px rgba(122,62,255,.35);
+      transition:transform .15s ease, filter .2s ease;
+    }
+    .social-bar a:hover{ filter:brightness(1.15); transform:translateY(-2px) scale(1.05); }
+    @media (max-width:768px){ .social-bar{ right:8px; gap:8px } .social-bar a{ width:40px; height:40px; font-size:18px } }
+
+    .catalog-swiper{ padding-bottom:40px }
+    .catalog-swiper .swiper-slide{ height:auto }
+    .catalog-card{ display:block; height:100% }
+    .catalog-card img{ width:100%; height:auto; display:block }
   </style>
 </head>
 <body>
@@ -104,27 +123,44 @@
         </p>
       </div>
 
-      <div class="catalog-grid">
-        <!-- كل كارت يفتح نفس PDF كمثال -->
-        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
-          <img src="assets/images/Viula%20White%202-1.png" alt="Viula White 2-1" loading="lazy">
-          <div class="catalog-meta"><span>Viula White</span></div>
-        </a>
+      <!-- Swiper -->
+      <div class="swiper catalog-swiper">
+        <div class="swiper-wrapper">
 
-        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
-          <img src="assets/images/Viula%20White%203-1.png" alt="Viula White 3-1" loading="lazy">
-          <div class="catalog-meta"><span>Viula White</span></div>
-        </a>
+          <div class="swiper-slide">
+            <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+              <img src="assets/images/Viula%20White%2017_page-0001.jpg" alt="Viula White 17" loading="lazy">
+              <div class="catalog-meta"><span>Viula White</span></div>
+            </a>
+          </div>
 
-        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
-          <img src="assets/images/Viula%20White%204-1.png" alt="Viula White 4-1" loading="lazy">
-          <div class="catalog-meta"><span>Viula White</span></div>
-        </a>
+          <div class="swiper-slide">
+            <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+              <img src="assets/images/Viula%20White%204-1.png" alt="Viula White 4-1" loading="lazy">
+              <div class="catalog-meta"><span>Viula White</span></div>
+            </a>
+          </div>
 
-        <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
-          <img src="assets/images/Viula%20White%2033-1.png" alt="Viula White 33-1" loading="lazy">
-          <div class="catalog-meta"><span>Viula White</span></div>
-        </a>
+          <div class="swiper-slide">
+            <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+              <img src="assets/images/Viula%20White%2033-1.png" alt="Viula White 33-1" loading="lazy">
+              <div class="catalog-meta"><span>Viula White</span></div>
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a class="catalog-card" href="catalog.html?file=Viula%20White.pdf&title=Viula%20White">
+              <img src="assets/images/Viula%20White%2019_page-0001.jpg" alt="Viula White 19" loading="lazy">
+              <div class="catalog-meta"><span>Viula White</span></div>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- نقاط وأسهم التحكم -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
   </section>
@@ -136,9 +172,42 @@
   </div>
 </footer>
 
-<!-- GSAP -->
+<!-- GSAP (اختياري للأنيميشن) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<!-- JS -->
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- تفعيل السلايدر -->
+<script>
+  // Swiper بيدعم السحب بالموبايل تلقائيًا
+  const swiper = new Swiper('.catalog-swiper', {
+    loop: true,
+    speed: 700,
+    spaceBetween: 24,
+
+    allowTouchMove: true,
+    grabCursor: true,
+
+    slidesPerView: 1.1,
+    breakpoints: {
+      640:  { slidesPerView: 2 },
+      992:  { slidesPerView: 3 },
+      1280: { slidesPerView: 4 }
+    },
+
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+      reverseDirection: true // يمشي لليمين مع RTL
+    },
+
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+  });
+</script>
+
+<!-- JS العام (اختياري) -->
 <script src="assets/js/script.js?v=4"></script>
 </body>
 </html>
